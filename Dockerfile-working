@@ -1,0 +1,11 @@
+
+FROM node:20.12.2-slim as build
+
+# the issue
+WORKDIR /working
+
+ENV NODE_ENV="production"
+
+COPY --link . .
+
+RUN npm run build
